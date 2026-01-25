@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mouli Banerjee - Professional Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            scroll-behavior: smooth;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --text-color: #f5f5f5;
+            --hover-color: #12f7ff;
+            --bg-color: #1a1a2e;
+            --secon-bg-color: #16213e;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(18, 247, 255, 0.1);
+            --big-font: 2rem;
+            --normal-font: 1.6rem;
+            --h2-font: 2.5rem;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* Subtle animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(18, 247, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(26, 26, 46, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(18, 247, 255, 0.03) 0%, transparent 50%);
+            z-index: -1;
+            animation: pulseBackground 20s infinite alternate;
+        }
+
+        @keyframes pulseBackground {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 10%;
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.8s ease;
+            font-size: 14px;
+        }
+
+        header.scrolled {
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            padding: 18px 10%;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #12f7ff, #bafcff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        span {
+            color: var(--hover-color);
+        }
+
+        .navlist {
+            display: flex;
+        }
+
+        .navlist a {
+            color: #f5f5f5;
+            font-weight: 500;
+            padding: 10px 18px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .navlist a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--hover-color);
+            transition: width 0.3s ease;
+        }
+
+        .navlist a:hover {
+            color: var(--hover-color);
+            text-shadow: 0 0 10px rgba(18, 247, 255, 0.7);
+        }
+
+        .navlist a:hover::before {
+            width: 80%;
+        }
+
+        #menu-icon {
+            font-size: 1.5rem;
+            z-index: 10001;
+            cursor: pointer;
+            margin-left: 20px;
+            background: var(--hover-color);
+            border-radius: 3px;
+            color: var(--secon-bg-color);
+            display: none;
+            padding: 4px 8px;
+            transition: all 0.3s ease;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 120px 10% 80px;
+            position: relative;
+        }
+
+        /* Experience Section */
+        .experience {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 5%;
+        }
+
+        .experience-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+        }
+
+        .experience-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--hover-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .experience-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--hover-color);
+            border-radius: 2px;
+        }
+
+        .experience-header p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #bdbdbd;
+            margin-top: 20px;
+        }
+
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .experience-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(18, 247, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(18, 247, 255, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--hover-color);
+            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(18, 247, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .card-title-container {
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: var(--hover-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+            color: #bdbdbd;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 10px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .card-highlights {
+            margin-top: 15px;
+        }
+
+        .card-highlights h4 {
+            font-size: 1rem;
+            color: var(--hover-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .highlight-list {
+            padding-left: 0;
+        }
+
+        .highlight-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #bdbdbd;
+        }
+
+        .highlight-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--hover-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(15, 15, 35, 0.8);
+            color: #bdbdbd;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            header {
+                padding: 12px 5%;
+            }
+            section {
+                padding: 120px 5% 80px;
+            }
+            .experience {
+                padding: 60px 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+            }
+            .navlist {
+                position: absolute;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 110px);
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: .5s ease;
+                backdrop-filter: blur(10px);
+            }
+            .navlist.active {
+                left: 0;
+            }
+            .navlist a {
+                display: block;
+                margin: 12px 0;
+                font-size: 1.1rem;
+            }
+            
+            .experience-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .experience-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .experience-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-card {
+                padding: 20px;
+            }
+            
+            .card-title {
+                font-size: 1.2rem;
+            }
+            
+            .card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                margin-right: 12px;
+            }
+            
+            .experience-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .highlight-item {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><span>M</span>ouli.</div>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="Certifications.html">Qualification</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Experiences.html">Experience</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div id="menu-icon" class="bx bx-menu"></div>
+    </header>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="experience-header">
+            <h2>Professional <span>Experience</span></h2>
+            <p>A comprehensive overview of my professional journey, showcasing hands-on experience in machine learning, data science, and technical leadership roles.</p>
+        </div>
+        
+        <div class="experience-container">
+            <!-- Machine Learning Intern -->
+            <div class="experience-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="card-title-container">
+                        <h3 class="card-title">Machine Learning Intern</h3>
+                        <div class="card-subtitle">Academy Innova World (AICTE)</div>
+                        <div class="card-date">Jun '25 - Jul'25</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Developed comprehensive expertise in machine learning algorithms and techniques through hands-on implementation and analysis of real-world datasets.
+                    </p>
+                    <div class="card-highlights">
+                        <h4>Key Responsibilities & Achievements:</h4>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">Implemented Supervised & Unsupervised Learning algorithms including Regression (Linear, Logistic) and Classification (Decision Trees, Random Forest, SVM, Naïve Bayes, KNN)</li>
+                            <li class="highlight-item">Applied Ensemble Methods and Clustering techniques (K-Means, Hierarchical) for pattern discovery and data segmentation</li>
+                            <li class="highlight-item">Conducted Principal Component Analysis (PCA) for dimensionality reduction and feature engineering</li>
+                            <li class="highlight-item">Performed Feature Selection and Model Interpretation using SHAP (SHapley Additive exPlanations) values</li>
+                            <li class="highlight-item">Implemented comprehensive Model Evaluation metrics including Cross-Validation, Confusion Matrix, ROC curves, AUC, Precision, Recall, and F1-Score</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Science Intern -->
+            <div class="experience-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-title-container">
+                        <h3 class="card-title">Data Science Intern</h3>
+                        <div class="card-subtitle">Cipher Byte Technologies</div>
+                        <div class="card-date">Jul '25 - Aug '25</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Applied data science methodologies to solve practical problems through exploratory data analysis and machine learning model development.
+                    </p>
+                    <div class="card-highlights">
+                        <h4>Key Responsibilities & Achievements:</h4>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">Conducted Exploratory Data Analysis (EDA) on Iris Dataset including Data Cleaning, Visualization, Feature Engineering, and Pattern Analysis</li>
+                            <li class="highlight-item">Built Spam Email Detection Model implementing Text Preprocessing techniques (Tokenization, Stopword Removal, TF-IDF vectorization)</li>
+                            <li class="highlight-item">Implemented Classification algorithms (Naïve Bayes, SVM, Logistic Regression) for email classification</li>
+                            <li class="highlight-item">Performed comprehensive Model Evaluation using metrics including Accuracy, Precision, Recall, and F1-Score</li>
+                            <li class="highlight-item">Developed data visualization dashboards to communicate findings and insights effectively</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AWS Management Team Member -->
+            <div class="experience-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="card-title-container">
+                        <h3 class="card-title">AWS Management Team Member</h3>
+                        <div class="card-subtitle">LPU AWS Club</div>
+                        <div class="card-date">Oct '23 - Dec '24</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="card-description">
+                        Provided technical leadership and organizational support for cloud computing initiatives and events, fostering innovation and practical learning.
+                    </p>
+                    <div class="card-highlights">
+                        <h4>Key Responsibilities & Achievements:</h4>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">Organized and managed hackathons, tech fests, and cloud workshops, ensuring seamless execution and active participation</li>
+                            <li class="highlight-item">Guided attendees in applying AWS cloud technologies, fostering innovation and practical learning experiences</li>
+                            <li class="highlight-item">Strengthened leadership, teamwork, and event management skills through coordination of technical events</li>
+                            <li class="highlight-item">Promoted awareness and adoption of cloud computing solutions among student community</li>
+                            <li class="highlight-item">Facilitated knowledge sharing sessions on AWS services and best practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        // Mobile menu toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navlist = document.querySelector('.navlist');
+        
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.navlist a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('bx-x');
+                navlist.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Initialize with header scrolled if page is not at top
+        if (window.scrollY > 50) {
+            document.querySelector('header').classList.add('scrolled');
+        }
+        
+        // Add subtle animation to experience cards
+        document.querySelectorAll('.experience-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
