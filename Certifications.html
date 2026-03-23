@@ -2,844 +2,185 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mouli Banerjee - Education & Certifications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouli Banerjee | Qualifications</title>
+    <meta name="description" content="Education and certifications of Susovhan Kundu across computer science, analytics, software engineering, and generative AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            list-style: none;
-            scroll-behavior: smooth;
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :root {
-            --text-color: #f5f5f5;
-            --hover-color: #12f7ff;
-            --bg-color: #250821;
-            --secon-bg-color: #292e33;
-            --big-font: 2.5rem;
-            --normal-font: 2rem;
-            --neon-box-shadow: 0 0 .5rem #12f7ff;
-            --h2-font: 3rem;
-            --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
-            0 0 20px rgba(18, 247, 255, 0.3),
-            0 0 30px rgba(18, 247, 255, 0.3),
-            0 0 40px rgba(18, 247, 255, 0.3),
-            0 0 70px rgba(18, 247, 255, 0.3),
-            0 0 80px rgba(18, 247, 255, 0.3),
-            0 0 100px rgba(18, 247, 255, 0.3),
-            0 0 150px rgba(18, 247, 255, 0.3);
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-            touch-action: manipulation;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-            opacity: 0.3;
-        }
-
-        .animated-bg::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(18, 247, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 87, 51, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(51, 255, 87, 0.1) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-30px, -30px) rotate(1deg); }
-            66% { transform: translate(20px, 20px) rotate(-1deg); }
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 20px 10%;
-            background-color: rgba(37, 8, 33, 0.95);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(18, 247, 255, 0.1);
-        }
-
-        header.scrolled {
-            background-color: rgba(37, 8, 33, 0.95);
-            box-shadow: 0 5px 30px rgba(18, 247, 255, 0.1);
-            padding: 15px 10%;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, #12f7ff, #bafcff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 10px rgba(18, 247, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            text-shadow: 0 0 20px rgba(18, 247, 255, 0.6);
-        }
-
-        span {
-            color: var(--hover-color);
-        }
-
-        .navlist {
-            display: flex;
-        }
-
-        .navlist a {
-            color: var(--text-color);
-            font-weight: 500;
-            padding: 10px 20px;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-            position: relative;
-            border-radius: 5px;
-        }
-
-        .navlist a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--hover-color);
-            transition: width 0.3s ease;
-        }
-
-        .navlist a:hover {
-            color: var(--hover-color);
-            text-shadow: var(--font-neon-text-shadow);
-        }
-
-        .navlist a:hover::before {
-            width: 80%;
-        }
-
-        #menu-icon {
-            font-size: 1.8rem;
-            z-index: 10001;
-            cursor: pointer;
-            margin-left: 25px;
-            background: var(--hover-color);
-            border-radius: 3px;
-            color: var(--secon-bg-color);
-            display: none;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-        }
-
-        #menu-icon:hover {
-            box-shadow: var(--neon-box-shadow);
-            transform: scale(1.05);
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 150px 10% 50px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main Container */
-        .main-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            width: 100%;
-            max-width: 1600px;
-            margin: 0 auto;
-            flex: 1;
-        }
-
-        /* Education Section */
-        .education-section, .certifications-section {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(18, 247, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            height: 70vh;
-            min-height: 500px;
-            max-height: 700px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            text-align: center;
-            color: var(--hover-color);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: var(--hover-color);
-            box-shadow: 0 0 10px var(--hover-color);
-        }
-
-        /* Education Cards */
-        .education-list, .certifications-list {
-            overflow-y: auto;
-            flex: 1;
-            padding-right: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Scrollbar styling */
-        .education-list::-webkit-scrollbar,
-        .certifications-list::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .education-list::-webkit-scrollbar-track,
-        .certifications-list::-webkit-scrollbar-track {
-            background: rgba(18, 247, 255, 0.05);
-            border-radius: 10px;
-        }
-
-        .education-list::-webkit-scrollbar-thumb,
-        .certifications-list::-webkit-scrollbar-thumb {
-            background: var(--hover-color);
-            border-radius: 10px;
-        }
-
-        /* Education Item */
-        .education-item {
-            background: rgba(18, 247, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            border-left: 3px solid var(--hover-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .education-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(18, 247, 255, 0.15);
-        }
-
-        .education-degree {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--hover-color);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .education-degree i {
-            font-size: 1rem;
-        }
-
-        .education-university {
-            font-size: 0.95rem;
-            color: #ffffff;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .education-location {
-            font-size: 0.85rem;
-            color: #bdbdbd;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .education-location i {
-            color: var(--hover-color);
-            font-size: 0.9rem;
-        }
-
-        .education-duration {
-            font-size: 0.8rem;
-            color: var(--hover-color);
-            font-weight: 500;
-            margin-bottom: 10px;
-            background: rgba(18, 247, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
-            display: inline-block;
-            border: 1px solid rgba(18, 247, 255, 0.2);
-        }
-
-        .education-score {
-            font-size: 0.9rem;
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 6px 12px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 8px;
-            font-weight: 500;
-        }
-
-        /* Certification Item */
-        .certification-item {
-            background: rgba(18, 247, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            border-left: 3px solid var(--hover-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .certification-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(18, 247, 255, 0.15);
-        }
-
-        .certification-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--hover-color);
-            line-height: 1.4;
-        }
-
-        .qualification-label {
-            font-size: 0.8rem;
-            color: #bdbdbd;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .certification-issuer {
-            font-size: 0.9rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .certification-issuer i {
-            color: var(--hover-color);
-            font-size: 0.9rem;
-        }
-
-        .certification-date {
-            font-size: 0.8rem;
-            color: var(--hover-color);
-            font-weight: 500;
-            background: rgba(18, 247, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 15px;
-            display: inline-block;
-            border: 1px solid rgba(18, 247, 255, 0.2);
-            margin-bottom: 10px;
-        }
-
-        .certification-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 12px;
-        }
-
-        .skill-tag {
-            background: rgba(18, 247, 255, 0.1);
-            color: var(--hover-color);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(18, 247, 255, 0.2);
-        }
-
-        .hackathon-highlights {
-            margin-top: 12px;
-            padding: 12px;
-            background: rgba(255, 215, 0, 0.05);
-            border-radius: 8px;
-            border-left: 3px solid gold;
-        }
-
-        .highlight-title {
-            color: gold;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .highlight-title i {
-            font-size: 0.8rem;
-        }
-
-        .highlight-item {
-            color: #fff;
-            font-size: 0.75rem;
-            margin: 4px 0;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .highlight-item::before {
-            content: '★';
-            position: absolute;
-            left: 0;
-            color: gold;
-            font-size: 0.8rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(15, 15, 35, 0.9);
-            color: #bdbdbd;
-            backdrop-filter: blur(5px);
-            margin-top: 50px;
-            border-top: 1px solid rgba(18, 247, 255, 0.1);
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .main-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                max-width: 800px;
-            }
-            
-            .education-section, .certifications-section {
-                height: 50vh;
-                min-height: 400px;
-                max-height: 500px;
-            }
-            
-            section {
-                padding: 150px 5% 50px;
-            }
-        }
-
-        @media (max-width: 991px) {
-            header {
-                padding: 15px 5%;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .education-section, .certifications-section {
-                padding: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #menu-icon {
-                display: block;
-            }
-            
-            .navlist {
-                position: absolute;
-                top: 100%;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 100px);
-                background: rgba(37, 8, 33, 0.98);
-                flex-direction: column;
-                align-items: center;
-                padding: 50px 0;
-                transition: .5s ease;
-                backdrop-filter: blur(10px);
-            }
-            
-            .navlist.active {
-                left: 0;
-            }
-            
-            .navlist a {
-                display: block;
-                margin: 15px 0;
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-            }
-            
-            .education-degree {
-                font-size: 1rem;
-            }
-            
-            .certification-title {
-                font-size: 0.95rem;
-            }
-            
-            .education-section, .certifications-section {
-                padding: 20px;
-                height: 45vh;
-                min-height: 350px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .education-item, .certification-item {
-                padding: 15px;
-            }
-            
-            .education-degree {
-                font-size: 0.95rem;
-            }
-            
-            .education-university {
-                font-size: 0.9rem;
-            }
-            
-            .certification-title {
-                font-size: 0.9rem;
-            }
-            
-            .education-location, .certification-issuer {
-                font-size: 0.8rem;
-            }
-            
-            .education-score {
-                font-size: 0.85rem;
-            }
-            
-            .skill-tag {
-                padding: 3px 8px;
-                font-size: 0.7rem;
-            }
-            
-            section {
-                padding: 150px 3% 30px;
-            }
-        }
-    </style>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo"><span>M</span>ouli.</div>
-        <ul class="navlist">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="Certifications.html">Qualification</a></li>
-            <li><a href="Skills.html">Skills</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Experiences.html">Experiences</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div id="menu-icon" class="bx bx-menu"></div>
-    </header>
-
-    <!-- Main Content -->
-    <section id="education-certifications">
-        <div class="main-container">
-            <!-- Education Section -->
-            <div class="education-section">
-                <h2 class="section-title">Education</h2>
-                <div class="education-list">
-                    <!-- University Education -->
-                    <div class="education-item">
-                        <h3 class="education-degree"><i class="fas fa-graduation-cap"></i> Bachelor of Technology - Computer Science and Engineering</h3>
-                        <p class="education-university">Lovely Professional University</p>
-                        <p class="education-location"><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
-                        <div class="education-duration">Aug 2023 – Jul 2027</div>
-                        <div class="education-score">CGPA: 8.35</div>
-                    </div>
-                    
-                    <!-- Intermediate -->
-                    <div class="education-item">
-                        <h3 class="education-degree"><i class="fas fa-school"></i> Intermediate (Higher Secondary)</h3>
-                        <p class="education-university">Khatra High School</p>
-                        <p class="education-location"><i class="fas fa-map-marker-alt"></i> West Bengal, India</p>
-                        <div class="education-duration">Feb 2021 - Mar 2023</div>
-                        <div class="education-score">Percentage: 83%</div>
-                    </div>
-                    
-                    <!-- Matriculation -->
-                    <div class="education-item">
-                        <h3 class="education-degree"><i class="fas fa-book"></i> Matriculation (Secondary)</h3>
-                        <p class="education-university">Khatra Sishu Niketan</p>
-                        <p class="education-location"><i class="fas fa-map-marker-alt"></i> West Bengal, India</p>
-                        <div class="education-duration">Feb 2019 - Mar 2021</div>
-                        <div class="education-score">Percentage: 96%</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications Section -->
-            <div class="certifications-section">
-                <h2 class="section-title">Certifications</h2>
-                <div class="certifications-list">
-                    <!-- Oracle AI -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Oracle Generative AI Professional Certificate</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Oracle (2025)</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Generative AI</span>
-                            <span class="skill-tag">AI Models</span>
-                            <span class="skill-tag">Oracle Cloud</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Privacy & Security -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Privacy and Security in Online Social Media</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> NPTEL</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Cybersecurity</span>
-                            <span class="skill-tag">Privacy</span>
-                            <span class="skill-tag">Social Media</span>
-                        </div>
-                    </div>
-                    
-                    <!-- GenAI Data Analytics -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">GenAI Powered Data Analytics Program</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Tata iQ</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Data Analytics</span>
-                            <span class="skill-tag">Generative AI</span>
-                            <span class="skill-tag">Business Intelligence</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Software Engineering -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Software Engineering Job Simulation</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Accenture Nordics</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Software Engineering</span>
-                            <span class="skill-tag">Agile</span>
-                            <span class="skill-tag">DevOps</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Data Analytics -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Data Analytics Simulation</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Deloitte Australia</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Data Analysis</span>
-                            <span class="skill-tag">Business Analytics</span>
-                            <span class="skill-tag">Data Visualization</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Quantitative Research -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Quantitative Research</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> J.P. Morgan</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Quantitative Analysis</span>
-                            <span class="skill-tag">Financial Research</span>
-                            <span class="skill-tag">Data Modeling</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Full Stack Development -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Full Stack Web Development</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Apna College</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">MongoDB</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Data Science with GenAI -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Data Science with Generative AI</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> PW Skills</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Data Science</span>
-                            <span class="skill-tag">Generative AI</span>
-                            <span class="skill-tag">Machine Learning</span>
-                        </div>
-                    </div>
-                    
-                    <!-- NeoColab Programming -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Programming Fundamentals (C, C++, Java, DSA)</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> NeoColab</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">C Programming</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Data Structures</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Hackathons -->
-                    <div class="certification-item">
-                        <h3 class="certification-title">Hackathon Participation Certificates</h3>
-                        <div class="qualification-label">Qualification</div>
-                        <div class="certification-issuer"><i class="fas fa-certificate"></i> Various Organizations (2023-2025)</div>
-                        <div class="certification-skills">
-                            <span class="skill-tag">Web-a-Thon</span>
-                            <span class="skill-tag">GNA Hackathon</span>
-                            <span class="skill-tag">Build-a-Thon</span>
-                            <span class="skill-tag">Code-a-Haunt</span>
-                        </div>
-                        <div class="hackathon-highlights">
-                            <div class="highlight-title"><i class="fas fa-award"></i> Key Achievements:</div>
-                            <div class="highlight-item">5th Position in GNA Hackathon 3.0</div>
-                            <div class="highlight-item">Finalist in Web-a-Thon</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="page-shell">
+        <div id="threejs-bg" aria-hidden="true"></div>
+        <div class="ambient-layer" aria-hidden="true">
+            <div class="glow-blob blob-a"></div>
+            <div class="glow-blob blob-b"></div>
+            <div class="glow-blob blob-c"></div>
         </div>
-    </section>
+        <div class="scroll-progress" id="scrollProgress"></div>
 
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html#home">
+                    <span class="brand-mark">M</span>
+                    <span class="brand-name">Mouli</span>
+                </a>
+                <nav aria-label="Primary">
+                    <ul class="navlist">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="Certifications.html" class="active-link">Qualification</a></li>
+                        <li><a href="Skills.html">Skills</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="Experiences.html">Experiences</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="menu-icon" class="bx bx-menu" aria-label="Open menu" aria-expanded="false"></button>
+            </div>
+        </header>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const navlist = document.querySelector('.navlist');
+        <main>
+            <section class="page-hero">
+                <div class="hero-panel panel reveal">
+                    <span class="eyebrow">Qualification</span>
+                    <h1>Academic grounding plus certifications that reinforce software, analytics, and GenAI growth.</h1>
+                    <p>
+                        The visual structure here has been cleaned up to feel more premium and easier to browse, with education and certifications presented in a consistent card system instead of disconnected styles.
+                    </p>
+                </div>
+            </section>
 
-        menuIcon.addEventListener('click', () => {
-            navlist.classList.toggle('active');
-            menuIcon.classList.toggle('bx-x');
-        });
+            <section>
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">Education</span>
+                        <h2>Academic milestones</h2>
+                    </div>
+                    <p>Strong performance through school and university with a clear technical trajectory toward engineering and intelligent systems.</p>
+                </div>
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.navlist a').forEach(link => {
-            link.addEventListener('click', () => {
-                navlist.classList.remove('active');
-                menuIcon.classList.remove('bx-x');
-            });
-        });
+                <div class="cert-layout">
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Bachelor of Technology - Computer Science and Engineering</h3>
+                        <div class="meta-row">
+                            <span class="meta-chip">Lovely Professional University</span>
+                            <span class="meta-chip">Punjab, India</span>
+                            <span class="meta-chip">Aug 2023 - Jul 2027</span>
+                        </div>
+                        <p>Current CGPA: 8.47</p>
+                    </article>
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
-        });
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <div class="card-icon"><i class="fas fa-school"></i></div>
+                        <h3>Intermediate (Higher Secondary)</h3>
+                        <div class="meta-row">
+                            <span class="meta-chip">Khatra High School</span>
+                            <span class="meta-chip">West Bengal, India</span>
+                            <span class="meta-chip">Feb 2022 - Mar 2023</span>
+                        </div>
+                        <p>Percentage: 83%</p>
+                    </article>
 
-        // Make sure content is properly visible
-        window.addEventListener('load', () => {
-            // Adjust container heights based on content
-            const educationList = document.querySelector('.education-list');
-            const certificationList = document.querySelector('.certifications-list');
-            
-            // Add smooth fade-in animation
-            const sections = document.querySelectorAll('.education-section, .certifications-section');
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 100);
-            });
-            
-            // Ensure scrollable areas work properly
-            if (educationList && certificationList) {
-                educationList.style.minHeight = '300px';
-                certificationList.style.minHeight = '300px';
-            }
-        });
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <div class="card-icon"><i class="fas fa-book"></i></div>
+                        <h3>Matriculation (Secondary)</h3>
+                        <div class="meta-row">
+                            <span class="meta-chip">Khatra Sishu Niketan</span>
+                            <span class="meta-chip">West Bengal, India</span>
+                            <span class="meta-chip">Feb 2020 - Mar 2021</span>
+                        </div>
+                        <p>Percentage: 96%</p>
+                    </article>
+                </div>
+            </section>
 
-        // Adjust heights on resize
-        window.addEventListener('resize', () => {
-            const sections = document.querySelectorAll('.education-section, .certifications-section');
-            sections.forEach(section => {
-                section.style.height = 'auto';
-                setTimeout(() => {
-                    const computedHeight = section.offsetHeight;
-                    section.style.height = Math.min(computedHeight, 700) + 'px';
-                }, 100);
-            });
-        });
-    </script>
+            <section>
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">Certifications</span>
+                        <h2>Learning signals that support my direction.</h2>
+                    </div>
+                    <p>Curated qualifications across generative AI, analytics, software engineering, and technical foundations.</p>
+                </div>
+
+                <div class="cert-layout">
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Oracle Generative AI Professional Certificate</h3>
+                        <div class="meta-row"><span class="meta-chip">Oracle</span><span class="meta-chip">2025</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Generative AI</span><span class="skill-badge">AI Models</span><span class="skill-badge">Oracle Cloud</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Privacy and Security in Online Social Media</h3>
+                        <div class="meta-row"><span class="meta-chip">NPTEL</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Cybersecurity</span><span class="skill-badge">Privacy</span><span class="skill-badge">Social Media</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>GenAI Powered Data Analytics Program</h3>
+                        <div class="meta-row"><span class="meta-chip">Tata iQ</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Data Analytics</span><span class="skill-badge">Generative AI</span><span class="skill-badge">Business Intelligence</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Software Engineering Job Simulation</h3>
+                        <div class="meta-row"><span class="meta-chip">Accenture Nordics</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Software Engineering</span><span class="skill-badge">Agile</span><span class="skill-badge">DevOps</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Data Analytics Simulation</h3>
+                        <div class="meta-row"><span class="meta-chip">Deloitte Australia</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Data Analysis</span><span class="skill-badge">Business Analytics</span><span class="skill-badge">Data Visualization</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Quantitative Research</h3>
+                        <div class="meta-row"><span class="meta-chip">J.P. Morgan</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Quantitative Analysis</span><span class="skill-badge">Financial Research</span><span class="skill-badge">Data Modeling</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Full Stack Web Development</h3>
+                        <div class="meta-row"><span class="meta-chip">Apna College</span></div>
+                        <div class="skill-badges"><span class="skill-badge">HTML/CSS</span><span class="skill-badge">JavaScript</span><span class="skill-badge">React</span><span class="skill-badge">Node.js</span><span class="skill-badge">MongoDB</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Data Science with Generative AI</h3>
+                        <div class="meta-row"><span class="meta-chip">PW Skills</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Data Science</span><span class="skill-badge">Generative AI</span><span class="skill-badge">Machine Learning</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Programming Fundamentals (C, C++, Java, DSA)</h3>
+                        <div class="meta-row"><span class="meta-chip">NeoColab</span></div>
+                        <div class="skill-badges"><span class="skill-badge">C Programming</span><span class="skill-badge">C++</span><span class="skill-badge">Java</span><span class="skill-badge">Data Structures</span></div>
+                    </article>
+
+                    <article class="cert-card glass-card tilt-card reveal">
+                        <h3>Hackathon Participation Certificates</h3>
+                        <div class="meta-row"><span class="meta-chip">Various Organizations</span><span class="meta-chip">2023 - 2025</span></div>
+                        <div class="skill-badges"><span class="skill-badge">Web-a-Thon</span><span class="skill-badge">GNA Hackathon</span><span class="skill-badge">Build-a-Thon</span><span class="skill-badge">Code-a-Haunt</span></div>
+                        <ul class="bullet-list">
+                            <li>5th position in GNA Hackathon 3.0.</li>
+                            <li>Finalist in Web-a-Thon.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            Qualifications now share the same polished layout language as the rest of the portfolio.
+        </footer>
+    </div>
 </body>
 </html>
