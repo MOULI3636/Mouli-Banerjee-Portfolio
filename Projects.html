@@ -2,563 +2,343 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="HandheldFriendly" content="true">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#250821">
-    <title>Mouli Banerjee - Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouli Banerjee | Projects</title>
+    <meta name="description" content="Selected projects by Susovhan Kundu across machine learning, analytics, dashboards, and full-stack product development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            list-style: none;
-            scroll-behavior: smooth;
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :root {
-            --text-color: #f5f5f5;
-            --hover-color: #12f7ff;
-            --bg-color: #250821;
-            --secon-bg-color: #292e33;
-            --big-font: 2.5rem;
-            --normal-font: 2rem;
-            --neon-box-shadow: 0 0 .5rem #12f7ff;
-            --h2-font: 3rem;
-            --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
-            0 0 20px rgba(18, 247, 255, 0.3),
-            0 0 30px rgba(18, 247, 255, 0.3),
-            0 0 40px rgba(18, 247, 255, 0.3),
-            0 0 70px rgba(18, 247, 255, 0.3),
-            0 0 80px rgba(18, 247, 255, 0.3),
-            0 0 100px rgba(18, 247, 255, 0.3),
-            0 0 150px rgba(18, 247, 255, 0.3);
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        /* Three.js Background */
-        #threejs-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.5;
-            touch-action: none;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 20px 10%;
-            background-color: rgba(37, 8, 33, 0.8);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(18, 247, 255, 0.1);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        header.scrolled {
-            background-color: rgba(37, 8, 33, 0.95);
-            box-shadow: 0 5px 30px rgba(18, 247, 255, 0.1);
-            padding: 15px 10%;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, #12f7ff, #bafcff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 10px rgba(18, 247, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            text-shadow: 0 0 20px rgba(18, 247, 255, 0.6);
-        }
-
-        span {
-            color: var(--hover-color);
-        }
-
-        .navlist {
-            display: flex;
-        }
-
-        .navlist a {
-            color: var(--text-color);
-            font-weight: 500;
-            padding: 10px 20px;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-            position: relative;
-            border-radius: 5px;
-        }
-
-        .navlist a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--hover-color);
-            transition: width 0.3s ease;
-        }
-
-        .navlist a:hover {
-            color: var(--hover-color);
-            text-shadow: var(--font-neon-text-shadow);
-        }
-
-        .navlist a:hover::before {
-            width: 80%;
-        }
-
-        #menu-icon {
-            font-size: 1.8rem;
-            z-index: 10001;
-            cursor: pointer;
-            margin-left: 25px;
-            background: var(--hover-color);
-            border-radius: 3px;
-            color: var(--secon-bg-color);
-            display: none;
-            padding: 5px 10px;
-            transition: all 0.3s ease;
-        }
-
-        #menu-icon:hover {
-            box-shadow: var(--neon-box-shadow);
-            transform: scale(1.05);
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 150px 10% 80px;
-            position: relative;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding-top: 100px;
-        }
-
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 3rem;
-        }
-
-        .project-box {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            background: rgba(26, 26, 46, 0.7);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(18, 247, 255, 0.2);
-            box-shadow: 0 0 20px rgba(18, 247, 255, 0.1);
-            transition: all 0.5s ease;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .project-box:hover {
-            transform: translateY(-10px);
-            border: 1px solid var(--hover-color);
-            box-shadow: 
-                0 0 0 1px var(--hover-color),
-                0 0 20px rgba(18, 247, 255, 0.2);
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--hover-color);
-            text-shadow: 0 0 5px rgba(18, 247, 255, 0.3);
-        }
-
-        .project-content p {
-            color: #bdbdbd;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .tech-tag {
-            background: rgba(18, 247, 255, 0.1);
-            color: var(--hover-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(18, 247, 255, 0.3);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: var(--h2-font);
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--hover-color);
-            text-shadow: 
-                0 0 10px rgba(18, 247, 255, 0.5),
-                0 0 20px rgba(18, 247, 255, 0.3),
-                0 0 30px rgba(18, 247, 255, 0.2);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--hover-color);
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(18, 247, 255, 0.5);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(15, 15, 35, 0.8);
-            color: #bdbdbd;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 991px) {
-            header {
-                padding: 15px 5%;
-            }
-            section {
-                padding: 150px 5% 80px;
-            }
-            .projects-container {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            #menu-icon {
-                display: block;
-            }
-            .navlist {
-                position: absolute;
-                top: 100%;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 100px);
-                background: rgba(37, 8, 33, 0.95);
-                flex-direction: column;
-                align-items: center;
-                padding: 50px 0;
-                transition: .5s ease;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-            .navlist.active {
-                left: 0;
-            }
-            .navlist a {
-                display: block;
-                margin: 15px 0;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Three.js Background -->
-    <div id="threejs-bg"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo"><span>M</span>ouli.</div>
-        <ul class="navlist">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="Certifications.html">Qualification</a></li>
-            <li><a href="Skills.html">Skills</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Experiences.html">Experience</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div id="menu-icon" class="bx bx-menu"></div>
-    </header>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="section-title">
-            <h2>My Projects</h2>
+    <div class="page-shell">
+        <div id="threejs-bg" aria-hidden="true"></div>
+        <div class="ambient-layer" aria-hidden="true">
+            <div class="glow-blob blob-a"></div>
+            <div class="glow-blob blob-b"></div>
+            <div class="glow-blob blob-c"></div>
         </div>
+        <div class="scroll-progress" id="scrollProgress"></div>
 
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>IntelliLearn 3D Educational Platform</h3>
-                    <p>A comprehensive educational platform featuring structured learning roadmaps, specialized courses, AI-powered career predictor, and immersive 3D virtual laboratories. Includes digital library with interactive books and real-time progress tracking.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React.js</span>
-                        <span class="tech-tag">Three.js</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Python</span>
+        <header class="site-header">
+            <div class="nav-wrap">
+                <a class="brand" href="index.html#home">
+                    <span class="brand-mark">M</span>
+                    <span class="brand-name">Mouli</span>
+                </a>
+                <nav aria-label="Primary">
+                    <ul class="navlist">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="Certifications.html">Qualification</a></li>
+                        <li><a href="Skills.html">Skills</a></li>
+                        <li><a href="Projects.html" class="active-link">Projects</a></li>
+                        <li><a href="Experiences.html">Experiences</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="menu-icon" class="bx bx-menu" aria-label="Open menu" aria-expanded="false"></button>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="hero-panel panel reveal">
+                    <span class="eyebrow">Projects</span>
+                    <h1>Premium project storytelling with stronger depth, structure, and clarity.</h1>
+                    <p>
+                        These cards are redesigned to feel more polished and recruiter-friendly: clearer hierarchy, better visual grouping, stronger hover depth, and technology badges that make each build easier to scan.
+                    </p>
+                    <div class="hero-strip">
+                        <div class="strip-card">
+                            <strong>Focus</strong>
+                            <span class="muted">Machine learning, analytics dashboards, and practical software builds.</span>
+                        </div>
+                        <div class="strip-card">
+                            <strong>Style</strong>
+                            <span class="muted">Glassmorphism cards, preview surfaces, layered shadows, and subtle 3D tilt.</span>
+                        </div>
+                        <div class="strip-card">
+                            <strong>Links</strong>
+                            <span class="muted">Existing personal live links are preserved exactly as they were.</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Project 2 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>Insight Predict ML Analyzer</h3>
-                    <p>Advanced machine learning platform supporting supervised & unsupervised algorithms, PCA, SHAP interpretability, ensemble methods, feature selection, and outlier detection. Comprehensive model comparison with visualization heatmaps.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Streamlit</span>
-                    </div>
+            <section>
+                <div class="project-grid">
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-education">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="eduBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#0a1830"></stop>
+                                        <stop offset="100%" stop-color="#102b4f"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#eduBg)"></rect>
+                                <circle cx="112" cy="96" r="54" fill="#163b65"></circle>
+                                <circle cx="112" cy="96" r="28" fill="#66e3ff"></circle>
+                                <rect x="208" y="60" width="250" height="152" rx="20" fill="#0d203b" stroke="#7fffd4" stroke-width="3"></rect>
+                                <rect x="230" y="86" width="92" height="16" rx="8" fill="#66e3ff"></rect>
+                                <rect x="230" y="118" width="150" height="10" rx="5" fill="#2d517c"></rect>
+                                <rect x="230" y="140" width="130" height="10" rx="5" fill="#24486f"></rect>
+                                <rect x="230" y="162" width="166" height="10" rx="5" fill="#24486f"></rect>
+                                <path d="M470 88l52 30v60l-52 30-52-30v-60z" fill="none" stroke="#66e3ff" stroke-width="4"></path>
+                                <path d="M470 106l20 12v24l-20 12-20-12v-24z" fill="#7fffd4" opacity="0.85"></path>
+                                <path d="M58 244c42-34 88-44 138-28 28 9 54 26 82 28 44 4 74-22 122-36 40-12 88-10 144 22" fill="none" stroke="#66e3ff" stroke-width="6" stroke-linecap="round" opacity="0.7"></path>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>3D Labs and AI Guidance</strong>
+                                <span>Learning journeys, virtual labs, and progress tracking</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>IntelliLearn 3D Educational Platform</h3>
+                            <!-- <span class="meta-chip">Platform</span> -->
+                        </div>
+                        <p>A comprehensive educational platform featuring structured learning roadmaps, specialized courses, AI-powered career predictor, and immersive 3D virtual laboratories. Includes digital library with interactive books and real-time progress tracking.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Three.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <div class="project-links">
+                                <a class="project-link primary" href="https://github.com/MOULI3636/IntelliLearn-3D-Education-Platform" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-ml">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="mlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#081629"></stop>
+                                        <stop offset="100%" stop-color="#13253f"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#mlBg)"></rect>
+                                <rect x="52" y="56" width="208" height="208" rx="20" fill="#0b1f37" stroke="#66e3ff" stroke-width="3"></rect>
+                                <circle cx="110" cy="106" r="15" fill="#66e3ff"></circle>
+                                <circle cx="194" cy="94" r="11" fill="#7fffd4"></circle>
+                                <circle cx="154" cy="168" r="19" fill="#ff9d6c"></circle>
+                                <circle cx="224" cy="196" r="14" fill="#66e3ff"></circle>
+                                <line x1="110" y1="106" x2="194" y2="94" stroke="#7fffd4" stroke-width="4"></line>
+                                <line x1="110" y1="106" x2="154" y2="168" stroke="#7fffd4" stroke-width="4"></line>
+                                <line x1="154" y1="168" x2="224" y2="196" stroke="#7fffd4" stroke-width="4"></line>
+                                <rect x="320" y="70" width="220" height="138" rx="18" fill="#0b1f37" stroke="#7fffd4" stroke-width="3"></rect>
+                                <path d="M344 176c26-22 42-44 68-42 20 1 27 18 44 18 18 0 26-18 44-34 10-9 22-16 40-17" fill="none" stroke="#66e3ff" stroke-width="6" stroke-linecap="round"></path>
+                                <rect x="344" y="94" width="54" height="54" rx="12" fill="#102b4f"></rect>
+                                <path d="M362 121h18M371 112v18" stroke="#7fffd4" stroke-width="5" stroke-linecap="round"></path>
+                                <rect x="320" y="226" width="220" height="20" rx="10" fill="#193a5f"></rect>
+                                <rect x="320" y="226" width="154" height="20" rx="10" fill="#66e3ff"></rect>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>Model Comparison and Explainability</strong>
+                                <span>PCA, SHAP, metrics, and visual analytics in one flow</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>Insight Predict ML Analyzer</h3>
+                        </div>
+                        <p>Advanced machine learning platform supporting supervised & unsupervised algorithms, PCA, SHAP interpretability, ensemble methods, feature selection, and outlier detection. Comprehensive model comparison with visualization heatmaps, performance metrics, and automated model evaluation for better insights and decision-making.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-Learn</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://insight-predict-app-et4zmrgcw3zenaxdk2xncn.streamlit.app/" target="_blank" rel="noreferrer">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-dashboard">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="dashBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#0a1a31"></stop>
+                                        <stop offset="100%" stop-color="#18355a"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#dashBg)"></rect>
+                                <rect x="54" y="52" width="492" height="216" rx="24" fill="#09192d" stroke="#66e3ff" stroke-width="3"></rect>
+                                <rect x="82" y="84" width="138" height="72" rx="16" fill="#102843"></rect>
+                                <rect x="242" y="84" width="122" height="72" rx="16" fill="#102843"></rect>
+                                <rect x="386" y="84" width="128" height="72" rx="16" fill="#102843"></rect>
+                                <path d="M102 222l58-42 42 24 54-56 48 28 70-52 48 22" fill="none" stroke="#7fffd4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <rect x="98" y="104" width="74" height="12" rx="6" fill="#66e3ff"></rect>
+                                <rect x="98" y="126" width="96" height="10" rx="5" fill="#32597f"></rect>
+                                <circle cx="303" cy="120" r="24" fill="none" stroke="#ff9d6c" stroke-width="8"></circle>
+                                <path d="M303 96a24 24 0 0 1 22 15" fill="none" stroke="#66e3ff" stroke-width="8" stroke-linecap="round"></path>
+                                <path d="M414 136l20-30 24 16 18-26" fill="none" stroke="#66e3ff" stroke-width="6" stroke-linecap="round"></path>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>Construction Monitoring Dashboard</strong>
+                                <span>Finance, locations, and progress insights across sites</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>Power BI Construction Dashboard</h3>
+                            <!-- <span class="meta-chip">Analytics</span> -->
+                        </div>
+                        <p>Comprehensive construction project management dashboard for House and CIP projects across India, enabling centralized monitoring of multiple sites. Real-time tracking with financial position analysis and project performance insights. Interactive live map visualization showing project locations, progress status, and key metrics to support efficient planning, reporting, and decision-making.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Excel</span>
+                            <span class="tech-badge">DAX</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://github.com/yourusername/construction-dashboard" target="_blank" rel="noreferrer">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-logistics">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="logBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#081522"></stop>
+                                        <stop offset="100%" stop-color="#12324d"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#logBg)"></rect>
+                                <path d="M84 232c58-62 124-98 196-106 74-8 150 9 238 74" fill="none" stroke="#1d4d72" stroke-width="18" stroke-linecap="round"></path>
+                                <path d="M84 232c58-62 124-98 196-106 74-8 150 9 238 74" fill="none" stroke="#66e3ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 12"></path>
+                                <path d="M140 196c0-22 18-40 40-40s40 18 40 40c0 24-40 72-40 72s-40-48-40-72z" fill="#7fffd4"></path>
+                                <circle cx="180" cy="196" r="14" fill="#0f243a"></circle>
+                                <rect x="326" y="140" width="128" height="78" rx="14" fill="#102843" stroke="#66e3ff" stroke-width="3"></rect>
+                                <rect x="454" y="160" width="56" height="58" rx="10" fill="#15375b" stroke="#66e3ff" stroke-width="3"></rect>
+                                <circle cx="368" cy="230" r="18" fill="#0b1727" stroke="#7fffd4" stroke-width="5"></circle>
+                                <circle cx="472" cy="230" r="18" fill="#0b1727" stroke="#7fffd4" stroke-width="5"></circle>
+                                <rect x="346" y="158" width="68" height="12" rx="6" fill="#7fffd4"></rect>
+                                <rect x="346" y="180" width="90" height="10" rx="5" fill="#355879"></rect>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>Returns Tracking and Flow Control</strong>
+                                <span>Reverse supply chain visibility with live status handling</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>Reverse Logistics Management System</h3>
+                            <!-- <span class="meta-chip">Utility</span> -->
+                        </div>
+                        <p>Intelligent platform designed to streamline the reverse supply chain by efficiently managing returned products and logistics flow. The system allows tracking of returned items, monitoring of processing stages, and analysis of reverse logistics data to improve operational efficiency and reduce waste.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Express.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Google OAuth 2.0</span>
+                            <span class="tech-badge">Rest API</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://reverse-logistics-hyperlocal-re-qgvr.onrender.com/" target="_blank" rel="noreferrer">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-canvas">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#0d1630"></stop>
+                                        <stop offset="100%" stop-color="#1d2445"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#canvasBg)"></rect>
+                                <rect x="62" y="48" width="476" height="224" rx="24" fill="#0c1730" stroke="#66e3ff" stroke-width="3"></rect>
+                                <rect x="106" y="90" width="120" height="74" rx="14" fill="#ffd36e"></rect>
+                                <rect x="250" y="78" width="136" height="86" rx="14" fill="#7fffd4"></rect>
+                                <rect x="406" y="102" width="90" height="64" rx="14" fill="#66e3ff"></rect>
+                                <rect x="148" y="194" width="146" height="68" rx="14" fill="#ff9d6c"></rect>
+                                <rect x="324" y="190" width="120" height="54" rx="14" fill="#c8b7ff"></rect>
+                                <path d="M226 128h24M386 122h20M296 224h28" stroke="#12243a" stroke-width="6" stroke-linecap="round"></path>
+                                <path d="M226 128l24 -7M386 122l20 12M294 224l30 -6" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.75"></path>
+                                <circle cx="92" cy="78" r="10" fill="#ff9d6c"></circle>
+                                <circle cx="122" cy="78" r="10" fill="#7fffd4"></circle>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>Collaborative Idea Boards</strong>
+                                <span>Visual planning workspace with secure project access</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>Think Canvas – Interactive Idea Workspace</h3>
+                            <!-- <span class="meta-chip">Reporting</span> -->
+                        </div>
+                        <p>A collaborative digital workspace where users can visually organize thoughts, plan workflows, and brainstorm ideas in a dynamic canvas environment. The system supports secure login using Google OAuth 2.0 and enables seamless interaction between users and their projects.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Google OAuth 2.0</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://think-canvas-app.onrender.com/" target="_blank" rel="noreferrer">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card tilt-card reveal">
+                        <div class="project-preview project-preview-stock">
+                            <svg class="project-art" viewBox="0 0 600 320" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="stockBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#071320"></stop>
+                                        <stop offset="100%" stop-color="#12314d"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="600" height="320" fill="url(#stockBg)"></rect>
+                                <g opacity="0.3" stroke="#7fffd4">
+                                    <path d="M70 70v180M130 70v180M190 70v180M250 70v180M310 70v180M370 70v180M430 70v180M490 70v180"></path>
+                                    <path d="M70 80h460M70 120h460M70 160h460M70 200h460M70 240h460"></path>
+                                </g>
+                                <path d="M92 232l58-36 46 14 56-70 44 24 66-78 58 18 48-34" fill="none" stroke="#66e3ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M426 70h92v92" fill="none" stroke="#7fffd4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M430 156l88-86" fill="none" stroke="#7fffd4" stroke-width="6" stroke-linecap="round"></path>
+                                <rect x="84" y="84" width="92" height="46" rx="14" fill="#0f243a" stroke="#66e3ff" stroke-width="3"></rect>
+                                <text x="108" y="114" fill="#7fffd4" font-size="28" font-family="Arial, sans-serif">AI</text>
+                            </svg>
+                            <div class="project-preview-overlay">
+                                <strong>Trend Forecasting Engine</strong>
+                                <span>Market signals, volatility tracking, and prediction views</span>
+                            </div>
+                        </div>
+                        <div class="project-card-header">
+                            <h3>AI-Powered Stock Market Predictor</h3>
+                            <!-- <span class="meta-chip">Prediction</span> -->
+                        </div>
+                        <p>Intelligent stock market prediction system utilizing machine learning algorithms for real-time market analysis. Features include trend prediction, volatility forecasting, and portfolio optimization suggestions. The system also analyzes historical market data, identifies hidden patterns, and generates data-driven insights through interactive visualizations and predictive analytics.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">Scikit-Learn</span>
+                            <span class="tech-badge">Alpha Vantage API</span>
+                        </div>
+                        <div class="project-links">
+                            <a class="project-link primary" href="https://github.com/MOULI3636/AI-Based-Live-Stock-Recommendation-System" target="_blank" rel="noreferrer"><i class="fab fa-github"></i>View Code</a>
+                        </div>
+                    </article>
                 </div>
-            </div>
+            </section>
+        </main>
 
-            <!-- Project 3 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>Power BI Construction Dashboard</h3>
-                    <p>Comprehensive construction project management dashboard for House and CIP projects across India. Real-time tracking with financial position analysis. Interactive live map visualization showing project locations and progress status.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">DAX</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>Real-Time Mobile Location Tracker</h3>
-                    <p>Advanced location tracking system that identifies mobile number operators (Jio, Airtel, etc.) and provides real-time geographical location. Features include carrier identification, GPS tracking, and geofencing alerts.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-Learn</span>
-                        <span class="tech-tag">Google Maps API</span>
-                        <span class="tech-tag">Streamlit</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>Advanced Excel Analytics Dashboard</h3>
-                    <p>Interactive Excel dashboard for comprehensive data analysis featuring advanced pivot tables, Power Query integration, and automated data processing. Includes dynamic charts and automated report generation.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Advanced Excel</span>
-                        <span class="tech-tag">Power Query</span>
-                        <span class="tech-tag">Power Pivot</span>
-                        <span class="tech-tag">DAX</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-box">
-                <div class="project-content">
-                    <h3>AI-Powered Stock Market Predictor</h3>
-                    <p>Intelligent stock market prediction system utilizing machine learning algorithms for real-time market analysis. Features include trend prediction, volatility forecasting, and portfolio optimization suggestions.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Scikit-Learn</span>
-                        <span class="tech-tag">Alpha Vantage API</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <script>
-        // Mobile Menu Toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const navlist = document.querySelector('.navlist');
-
-        menuIcon.addEventListener('click', () => {
-            navlist.classList.toggle('active');
-            menuIcon.classList.toggle('bx-x');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.navlist a').forEach(link => {
-            link.addEventListener('click', () => {
-                navlist.classList.remove('active');
-                menuIcon.classList.remove('bx-x');
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
-        });
-
-        // Three.js Background Animation
-        const bgContainer = document.getElementById('threejs-bg');
-        
-        // Scene setup
-        const bgScene = new THREE.Scene();
-        
-        // Camera setup
-        const bgCamera = new THREE.PerspectiveCamera(
-            75, 
-            window.innerWidth / window.innerHeight, 
-            0.1, 
-            1000
-        );
-        bgCamera.position.z = 5;
-        
-        // Renderer setup
-        const bgRenderer = new THREE.WebGLRenderer({ 
-            alpha: true,
-            antialias: true 
-        });
-        bgRenderer.setSize(window.innerWidth, window.innerHeight);
-        bgRenderer.setPixelRatio(window.devicePixelRatio);
-        bgContainer.appendChild(bgRenderer.domElement);
-        
-        // Create particles for background - ONLY PARTICLES, NO SPHERE
-        const bgParticlesGeometry = new THREE.BufferGeometry();
-        const bgParticleCount = 2000;
-        
-        const bgPosArray = new Float32Array(bgParticleCount * 3);
-        const bgColorArray = new Float32Array(bgParticleCount * 3);
-        
-        for(let i = 0; i < bgParticleCount * 3; i++) {
-            bgPosArray[i] = (Math.random() - 0.5) * 20;
-            bgColorArray[i] = Math.random() * 0.5 + 0.5;
-        }
-        
-        bgParticlesGeometry.setAttribute(
-            'position',
-            new THREE.BufferAttribute(bgPosArray, 3)
-        );
-        
-        bgParticlesGeometry.setAttribute(
-            'color',
-            new THREE.BufferAttribute(bgColorArray, 3)
-        );
-        
-        const bgParticlesMaterial = new THREE.PointsMaterial({
-            size: 0.05,
-            vertexColors: true,
-            transparent: true,
-            opacity: 1,
-            blending: THREE.AdditiveBlending
-        });
-        
-        const bgParticleMesh = new THREE.Points(bgParticlesGeometry, bgParticlesMaterial);
-        bgScene.add(bgParticleMesh);
-        
-        // Animation loop for background - NO SPHERE ROTATION
-        function bgAnimate() {
-            requestAnimationFrame(bgAnimate);
-            
-            // Only rotate particles, no sphere
-            bgParticleMesh.rotation.x += 0.0002;
-            bgParticleMesh.rotation.y += 0.0003;
-            
-            bgRenderer.render(bgScene, bgCamera);
-        }
-        
-        bgAnimate();
-        
-        // Handle window resize for background
-        window.addEventListener('resize', () => {
-            bgCamera.aspect = window.innerWidth / window.innerHeight;
-            bgCamera.updateProjectionMatrix();
-            bgRenderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Project hover effect
-        document.querySelectorAll('.project-box').forEach(project => {
-            project.addEventListener('mouseenter', () => {
-                project.style.border = '1px solid var(--hover-color)';
-                project.style.boxShadow = 
-                    '0 0 0 1px var(--hover-color),' +
-                    '0 0 20px rgba(18, 247, 255, 0.2)';
-            });
-            
-            project.addEventListener('mouseleave', () => {
-                project.style.border = '1px solid rgba(18, 247, 255, 0.2)';
-                project.style.boxShadow = '0 0 20px rgba(18, 247, 255, 0.1)';
-            });
-        });
-
-        // Prevent zooming on mobile devices
-        document.addEventListener('gesturestart', function(e) {
-            e.preventDefault();
-        });
-    </script>
+        <footer>
+            Project cards now emphasize story, stack, and action without adding noisy glow.
+        </footer>
+    </div>
 </body>
 </html>
