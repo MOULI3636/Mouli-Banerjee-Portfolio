@@ -11,6 +11,179 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .education-timeline {
+            position: relative;
+            display: grid;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding: 1rem 0;
+        }
+
+        .education-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: linear-gradient(180deg, rgba(102, 227, 255, 0.95), rgba(29, 199, 255, 0.45));
+            box-shadow: 0 0 24px rgba(102, 227, 255, 0.24);
+        }
+
+        .education-node {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .education-node::before {
+            content: "";
+            grid-column: 2;
+            justify-self: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.92);
+            background: linear-gradient(135deg, rgba(102, 227, 255, 1), rgba(127, 255, 212, 0.95));
+            box-shadow: 0 0 0 8px rgba(102, 227, 255, 0.12);
+            z-index: 1;
+        }
+
+        .education-content {
+            position: relative;
+            padding: 1.15rem 1.35rem;
+            border-radius: 24px;
+            background: rgba(11, 18, 32, 0.62);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
+        }
+
+        .education-content::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 28px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(102, 227, 255, 0.9), rgba(255, 255, 255, 0.15));
+            transform: translateY(-50%);
+        }
+
+        .section-heading .eyebrow {
+            display: inline-block;
+            margin-bottom: 0.85rem;
+        }
+
+        .education-node.left .education-content {
+            grid-column: 1;
+            text-align: right;
+        }
+
+        .education-node.left .education-content::after {
+            right: -28px;
+        }
+
+        .education-node.right .education-content {
+            grid-column: 3;
+            text-align: left;
+        }
+
+        .education-node.right .education-content::after {
+            left: -28px;
+        }
+
+        .education-content h3 {
+            margin-bottom: 0.55rem;
+        }
+
+        .education-school {
+            display: inline-block;
+            margin-bottom: 0.65rem;
+            font-weight: 700;
+            color: #7fffd4;
+            letter-spacing: 0.02em;
+        }
+
+        .education-line {
+            margin: 0.22rem 0;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .certificate-link-slot {
+            margin-top: 1.35rem;
+        }
+
+        .certificate-link-slot a,
+        .certificate-link-slot span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.9rem 1.2rem;
+            border-radius: 18px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .certificate-link-slot a {
+            color: var(--text);
+            background: linear-gradient(135deg, rgba(102, 227, 255, 0.18), rgba(127, 255, 212, 0.12));
+            border: 1px solid rgba(102, 227, 255, 0.24);
+            box-shadow: 0 14px 32px rgba(4, 12, 26, 0.28);
+        }
+
+        .certificate-link-slot a::before {
+            content: "\f08e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .certificate-link-slot a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(8, 24, 44, 0.36);
+            border-color: rgba(127, 255, 212, 0.38);
+        }
+
+        .certificate-link-slot span {
+            color: var(--muted-strong);
+            background: rgba(102, 227, 255, 0.06);
+            border: 1px dashed rgba(102, 227, 255, 0.2);
+        }
+
+        @media (max-width: 820px) {
+            .education-timeline::before {
+                left: 18px;
+                transform: none;
+            }
+
+            .education-node {
+                grid-template-columns: 36px 1fr;
+                gap: 1rem;
+            }
+
+            .education-node::before {
+                grid-column: 1;
+            }
+
+            .education-node.left .education-content,
+            .education-node.right .education-content {
+                grid-column: 2;
+                text-align: left;
+            }
+
+            .education-node.left .education-content::after,
+            .education-node.right .education-content::after {
+                left: -28px;
+                right: auto;
+            }
+        }
+    </style>
     <script defer src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script defer src="script.js"></script>
 </head>
@@ -51,7 +224,7 @@
                     <span class="eyebrow">Qualification</span>
                     <h1>Academic grounding plus certifications that reinforce software, analytics, and GenAI growth.</h1>
                     <p>
-                        The visual structure here has been cleaned up to feel more premium and easier to browse, with education and certifications presented in a consistent card system instead of disconnected styles.
+                        The visual structure here has been cleaned up to feel more premium and easier to browse, with education shown as a refined timeline and certifications presented in stronger, cleaner cards.
                     </p>
                 </div>
             </section>
@@ -65,38 +238,35 @@
                     <p>Strong performance through school and university with a clear technical trajectory toward engineering and intelligent systems.</p>
                 </div>
 
-                <div class="cert-layout">
-                    <article class="cert-card glass-card tilt-card reveal">
-                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3>Bachelor of Technology - Computer Science and Engineering</h3>
-                        <div class="meta-row">
-                            <span class="meta-chip">Lovely Professional University</span>
-                            <span class="meta-chip">Punjab, India</span>
-                            <span class="meta-chip">Aug 2023 - Jul 2027</span>
+                <div class="education-timeline">
+                    <article class="education-node left reveal">
+                        <div class="education-content">
+                            <h3>Bachelor of Technology - Computer Science and Engineering</h3>
+                            <span class="education-school">Lovely Professional University</span>
+                            <p class="education-line">Punjab, India</p>
+                            <p class="education-line">Aug 2023 - Jul 2027</p>
+                            <p class="education-line">Current CGPA: 8.47</p>
                         </div>
-                        <p>Current CGPA: 8.47</p>
                     </article>
 
-                    <article class="cert-card glass-card tilt-card reveal">
-                        <div class="card-icon"><i class="fas fa-school"></i></div>
-                        <h3>Intermediate (Higher Secondary)</h3>
-                        <div class="meta-row">
-                            <span class="meta-chip">Khatra High School</span>
-                            <span class="meta-chip">West Bengal, India</span>
-                            <span class="meta-chip">Feb 2022 - Mar 2023</span>
+                    <article class="education-node right reveal">
+                        <div class="education-content">
+                            <h3>Intermediate (Higher Secondary)</h3>
+                            <span class="education-school">Khatra High School</span>
+                            <p class="education-line">West Bengal, India</p>
+                            <p class="education-line">Feb 2022 - Mar 2023</p>
+                            <p class="education-line">Percentage: 83%</p>
                         </div>
-                        <p>Percentage: 83%</p>
                     </article>
 
-                    <article class="cert-card glass-card tilt-card reveal">
-                        <div class="card-icon"><i class="fas fa-book"></i></div>
-                        <h3>Matriculation (Secondary)</h3>
-                        <div class="meta-row">
-                            <span class="meta-chip">Khatra Sishu Niketan</span>
-                            <span class="meta-chip">West Bengal, India</span>
-                            <span class="meta-chip">Feb 2020 - Mar 2021</span>
+                    <article class="education-node left reveal">
+                        <div class="education-content">
+                            <h3>Matriculation (Secondary)</h3>
+                            <span class="education-school">Khatra Sishu Niketan</span>
+                            <p class="education-line">West Bengal, India</p>
+                            <p class="education-line">Feb 2020 - Mar 2021</p>
+                            <p class="education-line">Percentage: 96%</p>
                         </div>
-                        <p>Percentage: 96%</p>
                     </article>
                 </div>
             </section>
@@ -157,14 +327,14 @@
                         <h3>Full Stack Web Development</h3>
                         <div class="meta-row"><span class="meta-chip">Apna College</span></div>
                         <div class="skill-badges"><span class="skill-badge">HTML/CSS</span><span class="skill-badge">JavaScript</span><span class="skill-badge">React</span><span class="skill-badge">Node.js</span><span class="skill-badge">MongoDB</span></div>
-                        <p class="certificate-link-slot">Visit Certificate: <span>Ongoing</span></p>
+                        <p class="certificate-link-slot"><span>Visit Certificate Soon</span></p>
                     </article>
 
                     <article class="cert-card glass-card tilt-card reveal certificate-card" data-certificate-link="PASTE_LINKEDIN_CERTIFICATE_URL_HERE">
                         <h3>Data Science with Generative AI</h3>
                         <div class="meta-row"><span class="meta-chip">PW Skills</span></div>
                         <div class="skill-badges"><span class="skill-badge">Data Science</span><span class="skill-badge">Generative AI</span><span class="skill-badge">Machine Learning</span></div>
-                        <p class="certificate-link-slot">Visit Certificate: <span>Ongoing</span></p>
+                        <p class="certificate-link-slot"><span>Visit Certificate Soon</span></p>
                     </article>
 
                     <article class="cert-card glass-card tilt-card reveal certificate-card" data-certificate-link="PASTE_LINKEDIN_CERTIFICATE_URL_HERE">
